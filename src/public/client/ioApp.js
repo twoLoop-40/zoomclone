@@ -1,4 +1,4 @@
-import { addMessage, showRoomBasic } from "../../client/browserdraw";
+import { addMessage, showRoomBasic } from "../../lib/browserdraw";
 import {
   getInputValues,
   getTextValue,
@@ -6,7 +6,7 @@ import {
   setInnerHTML,
   setInputValue,
   toggleShow,
-} from "../../client/helpers";
+} from "../../lib/helpers";
 
 const socket = io("/");
 

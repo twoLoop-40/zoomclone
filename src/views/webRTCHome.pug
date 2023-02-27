@@ -11,11 +11,32 @@ html(lang="en")
 		header
 			h1 Noom
 		main 
-			#self-stream 
-				video#self-face(autoplay, playsinline, width="400", height="400")
-				button#mute-btn 음소거
-				button#camera-btn 카메라 끄기
-				select#cameras-select
+			#welcome 
+				form#welcome-form
+					input#room-name(type="text", required, placeholder="방 이름을 입력하세요")
+					input#nickname(type="text", required, placeholder="닉네임을 입력하세요")
+					button#join-btn 입장
+			#room(hidden)
+				div 
+					h2 
+						span 방 이름:
+						span#room-info
+					h2 
+						span 닉네임:
+						span#nickname-info
+
+			#call(hidden)
+				div
+					#self-stream
+						video#self-face(autoplay, playsinline, width="100%")
+						#controls
+							#buttons 
+								button#mute-btn 음소거
+								button#camera-btn 카메라 끄기
+							#selects
+								select#cameras-select
+					#peer-stream
+						video#peer-face(autoplay, playsinline, width="80%")
 		
 		script(src="/socket.io/socket.io.js")
 		script(src="/public/client/webRTCApp.js") 
